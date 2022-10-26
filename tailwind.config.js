@@ -1,0 +1,38 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+	content: ['./src/app/**/*.{tsx,ts}', './src/components/**/*.{tsx,ts}'],
+	theme: {
+		extend: {
+			colors: {
+				'accent-100': '#d3f2f2',
+				'accent-200': '#a8e5e4',
+				'accent-300': '#7cd8d7',
+				'accent-400': '#51cbc9',
+				'accent-500': '#25bebc',
+				'accent-600': '#1e9896',
+				'accent-700': '#167271',
+				'accent-800': '#0f4c4b',
+				'accent-900': '#072626',
+				'primary-100': '#cdcdd5',
+				'primary-200': '#9b9cab',
+				'primary-300': '#686a81',
+				'primary-400': '#363957',
+				'primary-500': '#04072d',
+				'primary-600': '#030624',
+				'primary-700': '#02041b',
+				'primary-800': '#020312',
+				'primary-900': '#010109',
+				'secondary-100': '#ebdef3',
+				'secondary-200': '#d7bde7',
+				'secondary-300': '#c49ddb',
+				'secondary-400': '#b07ccf',
+				'secondary-500': '#9c5bc3',
+				'secondary-600': '#7d499c',
+				'secondary-700': '#5e3775',
+				'secondary-800': '#3e244e',
+				'secondary-900': '#1f1227',
+			},
+		},
+	},
+	plugins: [],
+};
