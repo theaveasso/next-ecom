@@ -1,5 +1,5 @@
+import Footer from '../components/footer';
 import NavBar from '../components/navbar';
-
 import '../styles/globals.css';
 
 interface LayoutProps {
@@ -13,9 +13,10 @@ const RootLayout = ({ children }: LayoutProps) => {
 				<title>Next Solutions</title>
 				<meta name='description' content='Move your store to degital' />
 			</head>
-			<body className='text-white bg-primary-700'>
+			<body className='text-white bg-[#fffff]'>
 				<NavBar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);

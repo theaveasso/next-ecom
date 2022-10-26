@@ -7,8 +7,8 @@ const NavBar = () => {
 	return (
 		<header className=' w-full p-4 bg-gradient-to-r from-primary-600 to-primary-500'>
 			<nav className='container max-w-[1024px] mx-auto flex justify-between items-center'>
-				<h1 className='font-bold text-lg'>
-					RaedFish Solution Storefront
+				<h1 className='font-bold text-lg bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent'>
+					Storefront Solutions
 				</h1>
 				<div className='flex space-x-5 items-center'>
 					<ul className='flex space-x-4'>
