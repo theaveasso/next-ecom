@@ -16,7 +16,7 @@ const NavBar = () => {
 				<div className='flex space-x-5 items-center'>
 					<ul className='flex space-x-4'>
 						<li>
-							<Link href='#'>Link</Link>
+							<Link href='#'>Trending</Link>
 						</li>
 						<li>
 							<Link href='#'>Link</Link>

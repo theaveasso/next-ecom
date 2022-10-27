@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
 	return (
-		<section className='flex container mx-auto p-5 max-w-6xl gap-6'>
+		<section className=' flex container mx-auto p-5 max-w-6xl gap-6'>
 			<Sidebar />
 			{children}
 		</section>
