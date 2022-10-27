@@ -5,8 +5,10 @@ import { use } from 'react';
 
 // components
 import Button from '../components/button';
+import CategoryButton from './category-button';
 
 // asset data
+import ProductCard from '../components/product-card';
 import products from '../data/products.json';
 
 const HOMEPAGE = {
@@ -36,12 +38,14 @@ export async function getData() {
 	return data?.data.page;
 }
 
+const categories = ['Featured', 'Clothing', 'Assesories'];
+
 const Homepage = async () => {
 	const pageData = await getData();
 
 	return (
-		<section className='w-full container max-w-[1024px] px-6 mx-auto'>
-			<div className='relative mt-5 w-full rounded-md'>
+		<section className='w-full container max-w-[1024px] px-6 mx-auto flex items-center flex-col'>
+			<div className='relative mt-5 w-full h-[600px] rounded-xl bg-gradient-to-b from-black-500 to-transparent'>
 				<Link href={pageData.heroLink}>
 					<div className='absolute top-10 left-8'>
 						<h2 className='max-w-[450px] font-extrabold text-4xl xl:text-6xl'>
@@ -51,47 +55,33 @@ const Homepage = async () => {
 							{pageData.heroText}
 						</p>
 					</div>
-					<Image
+					{/* <Image
 						className='w-full object-cover rounded-lg shadow-md shadow-primary-400'
 						src={pageData.heroBackground.url}
 						alt=''
 						width={1024}
 						height={600}
 						priority
-					/>
+					/> */}
 				</Link>
 			</div>
-
+			{/* <Categories /> */}
+			<ul className='space-x-6'>
+				{categories.map((category) => (
+					<CategoryButton key={category} href={category}>
+						{category}
+					</CategoryButton>
+				))}
+			</ul>
 			<h2 className='text-2xl font-bold mt-10'>Featured Gear</h2>
-
 			<ul className='grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5'>
 				{products.slice(0, 4).map((product) => (
 					<li key={product.id}>
-						<Link href='#'>
-							<div className='p-4 rounded-lg bg-gradient-to-br from-gray-100 to-gray-200'>
-								<div>
-									<Image
-										className='rounded-lg shadow-md shadow-primary-100 '
-										src={product.image}
-										alt=''
-										width='500'
-										height='500'
-									/>
-									<div className='flex items-center text-black justify-between mt-2'>
-										<h3 className='font-bold text-sm'>
-											{product.name}
-										</h3>
-										<p>
-											$
-											<span className='ml-1 font-extrabold'>
-												{product.price}
-											</span>
-										</p>
-									</div>
-								</div>
-								<Button className='mt-2'>Add to Cart</Button>
-							</div>
-						</Link>
+						<ProductCard
+							prodImage={product.image}
+							prodName={product.name}
+							prodPrice={product.price}
+						/>
 					</li>
 				))}
 			</ul>

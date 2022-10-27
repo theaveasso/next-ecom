@@ -13,9 +13,10 @@ const RootLayout = ({ children }: LayoutProps) => {
 				<title>Next Solutions</title>
 				<meta name='description' content='Move your store to degital' />
 			</head>
-			<body className='text-white bg-[#fffff]'>
+			<body className='text-white bg-black-900 flex flex-col h-screen'>
 				<NavBar />
-				{children}
+				<div className='flex-grow'>{children}</div>
+
 				<Footer />
 			</body>
 		</html>
